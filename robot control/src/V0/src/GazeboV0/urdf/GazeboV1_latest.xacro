@@ -1,0 +1,953 @@
+<?xml version='1.0'?>
+
+<robot name="GazeboV1" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+  <xacro:include filename="$(find GazeboV0)/urdf/UVbot.gazebo" />
+  <xacro:include filename="$(find GazeboV0)/urdf/macros.xacro" />
+  <xacro:include filename="$(find GazeboV0)/urdf/materials.xacro" />
+  <link
+    name="Chassis">
+    <inertial>
+      <origin
+        xyz="-0.0349291227412865 -0.0495089113491768 -0.00170081282624067"
+        rpy="0 0 0" />
+      <mass
+        value="4.66826330321552" />
+      <inertia
+        ixx="0.130787692266524"
+        ixy="-0.0104155393687218"
+        ixz="-1.81743796078425E-07"
+        iyy="0.193986448043217"
+        iyz="-6.31947033467866E-06"
+        izz="0.181657790771304" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://GazeboV0/meshes/Chassis.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://GazeboV0/meshes/Chassis.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="RightWheel">
+    <inertial>
+      <origin
+        xyz="1.66533453693773E-16 -2.08166817117217E-17 0.00510000000000357"
+        rpy="0 0 0" />
+      <mass
+        value="0.338614058747035" />
+      <inertia
+        ixx="0.000347581051317554"
+        ixy="-7.2847914388561E-20"
+        ixz="9.68090147789188E-18"
+        iyy="0.000347581051317554"
+        iyz="4.20426026957168E-19"
+        izz="0.000689518301963574" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://GazeboV0/meshes/RightWheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://GazeboV0/meshes/RightWheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RightRevolute"
+    type="continuous">
+    <origin
+      xyz="-0.0464879186474883 0.13117170540085 -0.191028392468994"
+      rpy="3.14159265358979 0 1.5707963267949" />
+    <parent
+      link="Chassis" />
+    <child
+      link="RightWheel" />
+    <axis
+      xyz="0 0 1" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+  <link
+    name="LeftWheel">
+    <inertial>
+      <origin
+        xyz="-8.32667268468867E-17 0 -0.00510000000000457"
+        rpy="0 0 0" />
+      <mass
+        value="0.338614058747035" />
+      <inertia
+        ixx="0.000347581051317554"
+        ixy="0"
+        ixz="5.18653052206189E-18"
+        iyy="0.000347581051317554"
+        iyz="2.094272599277E-18"
+        izz="0.000689518301963574" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://GazeboV0/meshes/LeftWheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://GazeboV0/meshes/LeftWheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LeftRevolute"
+    type="continuous">
+    <origin
+      xyz="-0.0464879186474897 0.131171705400839 0.188167736746003"
+      rpy="-3.14159265358976 0 0.415802035717092" />
+    <parent
+      link="Chassis" />
+    <child
+      link="LeftWheel" />
+    <axis
+      xyz="0 0 1" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+  <link
+    name="FrontCastor">
+    <inertial>
+      <origin
+        xyz="0.00303144893180393 0.0345627416364439 -2.77555756156289E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.0671525104446696" />
+      <inertia
+        ixx="4.49259698602968E-05"
+        ixy="-6.70501812216236E-06"
+        ixz="5.74487078803631E-21"
+        iyy="9.6191398567932E-06"
+        iyz="1.64392041830321E-20"
+        izz="4.97992078191438E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://GazeboV0/meshes/FrontCastor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://GazeboV0/meshes/FrontCastor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FrontCastorRevolute"
+    type="continuous">
+    <origin
+      xyz="0.17263668098028 0.106171705400847 -0.00173226325399095"
+      rpy="3.14159265358979 -1.54598030035848 3.14159265358979" />
+    <parent
+      link="Chassis" />
+    <child
+      link="FrontCastor" />
+    <axis
+      xyz="0 1 0" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+  <link
+    name="FrontCastorWheel">
+    <inertial>
+      <origin
+        xyz="-1.38777878078145E-17 0 -6.38378239159465E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.0317645176567402" />
+      <inertia
+        ixx="3.91504603938205E-06"
+        ixy="6.35274710440725E-22"
+        ixz="4.69724685629155E-21"
+        iyy="3.91504603938205E-06"
+        iyz="-3.89769041069977E-21"
+        izz="7.40108172021949E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://GazeboV0/meshes/FrontCastorWheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://GazeboV0/meshes/FrontCastorWheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FrontCastorWheelRevolute"
+    type="continuous">
+    <origin
+      xyz="0.0320000000000025 0.0674999999999988 0"
+      rpy="0 0 -2.72865613261179" />
+    <parent
+      link="FrontCastor" />
+    <child
+      link="FrontCastorWheel" />
+    <axis
+      xyz="0 0 1" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+  <link
+    name="RearCastor">
+    <inertial>
+      <origin
+        xyz="0.00303144893180135 0.0345627416364439 2.77555756156289E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.0671525104446695" />
+      <inertia
+        ixx="4.49259698602978E-05"
+        ixy="-6.70501812215977E-06"
+        ixz="2.83273439653557E-21"
+        iyy="9.61913985679222E-06"
+        iyz="-7.18459139052423E-21"
+        izz="4.97992078191438E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://GazeboV0/meshes/RearCastor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://GazeboV0/meshes/RearCastor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RearCastorRevolute"
+    type="continuous">
+    <origin
+      xyz="-0.26561 0.10617 -0.0017323"
+      rpy="3.1416 0.86322 -3.1416" />
+    <parent
+      link="Chassis" />
+    <child
+      link="RearCastor" />
+    <axis
+      xyz="0 1 0" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+  <link
+    name="RearCastorWheel">
+    <inertial>
+      <origin
+        xyz="-2.77555756156289E-17 2.77555756156289E-17 -8.32667268468867E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.0317645176567403" />
+      <inertia
+        ixx="3.91504603938205E-06"
+        ixy="-1.05879118406788E-22"
+        ixz="2.19563704948836E-21"
+        iyy="3.91504603938205E-06"
+        iyz="4.98357577870837E-22"
+        izz="7.4010817202195E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://GazeboV0/meshes/RearCastorWheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://GazeboV0/meshes/RearCastorWheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RearCastorWheelRevolute"
+    type="continuous">
+    <origin
+      xyz="0.032 0.0675 0"
+      rpy="0 0 1.2997" />
+    <parent
+      link="RearCastor" />
+    <child
+      link="RearCastorWheel" />
+    <axis
+      xyz="0 0 1" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+  <link
+    name="Battery">
+    <inertial>
+      <origin
+        xyz="6.5226E-16 0.0925 -2.6021E-17"
+        rpy="0 0 0" />
+      <mass
+        value="17.512" />
+      <inertia
+        ixx="0.17268"
+        ixy="1.1068E-15"
+        ixz="6.5533E-16"
+        iyy="0.33347"
+        iyz="2.7779E-17"
+        izz="0.26068" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://GazeboV0/meshes/Battery.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://GazeboV0/meshes/Battery.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Fixed_Chassis_Battery"
+    type="fixed">
+    <origin
+      xyz="-0.046488 -0.10283 -0.0014323"
+      rpy="0 0 0" />
+    <parent
+      link="Chassis" />
+    <child
+      link="Battery" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+
+  <link
+    name="LiDAR">
+    <inertial>
+      <origin
+        xyz="2.7756E-17 0.0204 1.0842E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.2295" />
+      <inertia
+        ixx="0.00013941"
+        ixy="-1.1081E-20"
+        ixz="-3.8687E-21"
+        iyy="0.00021516"
+        iyz="8.6691E-21"
+        izz="0.00013941" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://GazeboV0/meshes/LiDAR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://GazeboV0/meshes/LiDAR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Fixed_Battery_LiDAR"
+    type="fixed">
+    <origin
+      xyz="0.14351 -0.10903 -0.0017323"
+      rpy="3.1416 0 0" />
+    <parent
+      link="Chassis" />
+    <child
+      link="LiDAR" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+
+
+
+
+  <link
+    name="WoodRod"> <!--comment-->
+    <inertial>
+      <origin
+        xyz="1.0842E-18 -5.1576E-06 0.25004"
+        rpy="0 0 0" />
+      <mass
+        value="0.70171" />
+      <inertia
+        ixx="0.098881"
+        ixy="-1.9823E-21"
+        ixz="-8.8385E-20"
+        iyy="0.098881"
+        iyz="-3.6206E-07"
+        izz="0.00010523" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://GazeboV0/meshes/WoodRod.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://GazeboV0/meshes/WoodRod.STL" />
+      </geometry>
+    </collision>
+  </link> 
+
+
+  <joint    name="Fixed_Chassis_WoodRod"
+    type="fixed">
+    <origin
+      xyz="-0.046487918647492 -0.14582829459916 -0.00173226325399934" 
+      rpy="1.5707963267949 -4.71 0" />
+    <parent      link="Chassis" />
+    <child
+      link="WoodRod" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="TBS1">
+    <inertial>
+      <origin
+        xyz="-6.50521303491303E-19 -5.55111512312578E-17 0.00275"
+        rpy="0 0 0" />
+      <mass
+        value="0.00173867551882195" />
+      <inertia
+        ixx="2.81242393072002E-08"
+        ixy="2.25608262828661E-24"
+        ixz="-5.41969876622703E-24"
+        iyy="9.57958648484737E-08"
+        iyz="4.20513624735304E-26"
+        izz="1.1515428174828E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://GazeboV0/meshes/TBS1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://GazeboV0/meshes/TBS1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Fixed_WoodRod_TBS1"
+    type="fixed">
+    <origin
+      xyz="0 0.0205 1.05"
+      rpy="1.5708 0 0" />
+    <parent
+      link="WoodRod" />
+    <child
+      link="TBS1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+
+  <link
+    name="TBS2">
+    <inertial>
+      <origin
+        xyz="-8.89045781438114E-18 -1.11022302462516E-16 0.00275"
+        rpy="0 0 0" />
+      <mass
+        value="0.00173867551882196" />
+      <inertia
+        ixx="2.81242393072003E-08"
+        ixy="7.56188135213521E-23"
+        ixz="-4.46736553603762E-24"
+        iyy="9.5795864848474E-08"
+        iyz="-6.47770446955559E-25"
+        izz="1.1515428174828E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://GazeboV0/meshes/TBS2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://GazeboV0/meshes/TBS2.STL" />
+      </geometry>
+
+
+
+  <!-- Hokuyo Laser -->
+  <link name="hokuyo">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+    <box size="0.1 0.1 0.1"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://mybot_description/meshes/hokuyo.dae"/>
+      </geometry>
+    </visual>
+
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+    </collision>
+  </link>
+
+
+  <joint
+    name="Fixed_WoodRod_TBS2"
+    type="fixed">
+    <origin
+      xyz="0 0.0205 0.85"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="WoodRod" />
+    <child
+      link="TBS2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="TBS3">
+    <inertial>
+      <origin
+        xyz="-4.33680868994202E-19 0 0.00275"
+        rpy="0 0 0" />
+      <mass
+        value="0.00173867551882195" />
+      <inertia
+        ixx="2.81242393072002E-08"
+        ixy="1.48908023238314E-22"
+        ixz="-5.43212147097724E-24"
+        iyy="9.57958648484736E-08"
+        iyz="-6.47770446955484E-25"
+        izz="1.1515428174828E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://GazeboV0/meshes/TBS3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://GazeboV0/meshes/TBS3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Fixed_WoodRod_TBS3"
+    type="fixed">
+    <origin
+      xyz="0 0.0205 0.65"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="WoodRod" />
+    <child
+      link="TBS3" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="TBS4">
+    <inertial>
+      <origin
+        xyz="-6.50521303491303E-18 0 0.00275"
+        rpy="0 0 0" />
+      <mass
+        value="0.00173867551882196" />
+      <inertia
+        ixx="2.81242393072003E-08"
+        ixy="-8.25997223265049E-23"
+        ixz="3.64947454950446E-24"
+        iyy="9.57958648484738E-08"
+        iyz="3.50530261744963E-25"
+        izz="1.1515428174828E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://GazeboV0/meshes/TBS4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://GazeboV0/meshes/TBS4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Fixed_WoodRod_TBS4"
+    type="fixed">
+    <origin
+      xyz="0 0.015 0.45"
+      rpy="-1.5707963267949 0 0" />
+    <parent
+      link="WoodRod" />
+    <child
+      link="TBS4" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="TBS5">
+    <inertial>
+      <origin
+        xyz="-1.45283091113058E-17 2.22044604925031E-16 0.00275"
+        rpy="0 0 0" />
+      <mass
+        value="0.00173867551882196" />
+      <inertia
+        ixx="2.81242393072001E-08"
+        ixy="1.71994343029309E-22"
+        ixz="4.25526549978333E-24"
+        iyy="9.57958648484738E-08"
+        iyz="6.27650514569657E-26"
+        izz="1.1515428174828E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://GazeboV0/meshes/TBS5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://GazeboV0/meshes/TBS5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Fixed_WoodRod_TBS5"
+    type="fixed">
+    <origin
+      xyz="0 0.015 0.25"
+      rpy="-1.5707963267949 0 0" />
+    <parent
+      link="WoodRod" />
+    <child
+      link="TBS5" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="TBS6">
+    <inertial>
+      <origin
+        xyz="1.0842021724855E-18 0 0.00275"
+        rpy="0 0 0" />
+      <mass
+        value="0.00173867551882195" />
+      <inertia
+        ixx="2.81242393072E-08"
+        ixy="1.13647096521833E-23"
+        ixz="3.18913722950877E-24"
+        iyy="9.57958648484735E-08"
+        iyz="7.14489731268272E-25"
+        izz="1.15154281748279E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://GazeboV0/meshes/TBS6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://GazeboV0/meshes/TBS6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Fixed_WoodRod_TBS6"
+    type="fixed">
+    <origin
+      xyz="0 0.015 0.05"
+      rpy="-1.5707963267949 0 0" />
+    <parent
+      link="WoodRod" />
+    <child
+      link="TBS6" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Camera">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://GazeboV0/meshes/Camera.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://GazeboV0/meshes/Camera.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Fixed_Chassis_Camera"
+    type="fixed">
+    <origin
+      xyz="0.190512081352507 -0.152328294599157 -0.00423226325400071"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="Chassis" />
+    <child
+      link="Camera" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+
+  
+</robot>

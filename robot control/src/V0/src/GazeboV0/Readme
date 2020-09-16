@@ -1,0 +1,51 @@
+STEP 1
+In the workspace mybot_ws
+run "catkin_make"
+run "source devel/setup.bash"
+
+DO this in each terminal
+
+
+STEP 2 : LAUNCH ROBOT
+
+Open a new terminal 
+cd mybot_ws
+catkin_make
+source devel/setup.bash
+roslaunch GazeboV0 UVbot2.launch
+
+Run the python file new_laser.py 
+
+
+STEP 3 To run localization 
+
+In a new tab
+cd mybot_ws
+catkin_make
+source devel/setup.bash
+roslaunch GazeboV0 amcl_demo.launch 
+
+
+
+STEP 4 Visualization and navigation
+
+
+In a new tab
+cd mybot_ws
+catkin_make
+source devel/setup.bash
+roslaunch GazeboV0 mybot_rviz_amcl.launch 
+
+
+
+Nodes to run to connect to the APP
+
+1. coordinates_multiple_final.py ---- To create missions
+2. throttle.py -- to move the robot manually
+3. turtlebot_video.py --- To get a the live video feed
+4.emerg.py --- for emergency stop utility
+5. Status.py --- to get the status of the robot
+6. mark.py --- to manually mark the point of sanitization
+
+
+ 

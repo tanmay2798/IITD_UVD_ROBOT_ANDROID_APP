@@ -1,0 +1,8 @@
+prefix=/home/dhruv/mybot_ws/devel
+
+Name: GazeboV0
+Description: Description of GazeboV0
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/dhruv/mybot_ws/devel/lib 
+Requires: 

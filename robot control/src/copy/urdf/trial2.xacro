@@ -1,0 +1,260 @@
+<?xml version='1.0'?>
+
+
+<robot  name="copy"  xmlns:xacro="http://www.ros.org/wiki/xacro" >
+  
+  <xacro:include filename="$(find mybot_description)/urdf/hello.gazebo" />
+  
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.23103 -0.082447 0.358"
+        rpy="0 0 0" />
+      <mass
+        value="8.4976" />
+      <inertia
+        ixx="0.86866"
+        ixy="-6.0026E-06"
+        ixz="-2.169E-06"
+        iyy="0.080257"
+        iyz="9.0428E-06"
+        izz="0.86315" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://copy/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://copy/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="castor">
+    <inertial>
+      <origin
+        xyz="0.15587 0.0012594 0.45536"
+        rpy="0 0 0" />
+      <mass
+        value="9.2329" />
+      <inertia
+        ixx="1.3558"
+        ixy="-0.0018707"
+        ixz="0.010618"
+        iyy="1.3402"
+        iyz="1.1948E-05"
+        izz="0.15458" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://copy/meshes/castor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://copy/meshes/castor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="1"
+    type="fixed">
+    <origin
+      xyz="0.22976 -0.51408 0.41208"
+      rpy="3.1416 0 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="castor" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left_wheel">
+    <inertial>
+      <origin
+        xyz="-4.9960036108132E-16 0.015875 -1.66533453693773E-15"
+        rpy="0 0 0" />
+      <mass
+        value="0.34919949426105" />
+      <inertia
+        ixx="0.000403477805923709"
+        ixy="-3.16390506015085E-20"
+        ixz="-5.42101086242752E-20"
+        iyy="0.000758098830283409"
+        iyz="7.05771925366499E-20"
+        izz="0.000403477805923709" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://copy/meshes/left_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://copy/meshes/left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="3"
+    type="fixed">
+    <origin
+      xyz="0.4477 -0.34773 0.40747"
+      rpy="3.1416 1.1461 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_wheel" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right_wheel">
+    <inertial>
+      <origin
+        xyz="-2.2204E-16 0.015875 -2.7756E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.3492" />
+      <inertia
+        ixx="0.00040348"
+        ixy="-2.4541E-20"
+        ixz="4.0658E-20"
+        iyy="0.0007581"
+        iyz="-5.3829E-20"
+        izz="0.00040348" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://copy/meshes/right_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://copy/meshes/right_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="4"
+    type="fixed">
+    <origin
+      xyz="0.048697 -0.37344 0.41167"
+      rpy="0 0.54686 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_wheel" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="castor2">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://copy/meshes/castor2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://copy/meshes/castor2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="2"
+    type="fixed">
+    <origin
+      xyz="0.23213 -0.20766 0.41208"
+      rpy="3.1416 0 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="castor2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>
