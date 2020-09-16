@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/image"
+    android:orientation="vertical">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <EditText
+            android:id="@+id/battery_level"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|center_horizontal"
+            android:hint="Battery Level"
+            android:inputType="text"
+            android:textColor="@android:color/background_light"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/nodes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="nodes"
+            android:text="nodes"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/map"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="map"
+            android:text="map"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginLeft="50dp"
+        android:rotation="-90" />
+
+
+    <!--<org.ros.android.view.VirtualJoystickView-->
+    <!--android:id="@+id/virtual_joystick1"-->
+    <!--android:layout_width="150dp"-->
+    <!--android:layout_height="150dp"-->
+    <!--android:layout_weight="4"-->
+    <!--android:adjustViewBounds="true"-->
+    <!--android:gravity="right" />-->
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center_horizontal|center"
+        android:orientation="vertical">
+
+
+        <Button
+            android:id="@+id/throttle"
+            style="@android:style/Widget.Button"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/up" />
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/left"
+                style="@android:style/Widget.Button"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/left" />
+
+            <Button
+                android:id="@+id/stop"
+                style="@android:style/Widget.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_back"
+                android:text="Stop"
+                android:textColor="@android:color/background_light"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/right"
+                style="@android:style/Widget.Button"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/right" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/back"
+            style="@android:style/Widget.Button"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/down" />
+
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_weight="5" />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/mark"
+            style="@android:style/Widget.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_back"
+            android:onClick="back_nav"
+            android:text="Mark Point"
+            android:textColor="@android:color/background_light"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/back_nav"
+            style="@android:style/Widget.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_back"
+            android:onClick="back_nav"
+            android:text="Back"
+            android:textColor="@android:color/background_light"
+            android:textSize="20dp" />
+    </LinearLayout>
+
+</LinearLayout>
